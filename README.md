@@ -6,9 +6,11 @@ Psychologists keeping their notes digitally instead of in notebooks both helps t
 
 ## 📸 Project Interface
 Login page;  
-![interface](./assets/login.JPG)
+![interface](./assets/login.JPG)  
+
 Main page;    
 ![interface](./assets/main.JPG)  
+
 Detail page;  
 ![interface](./assets/detail.JPG)  
 

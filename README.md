@@ -5,7 +5,12 @@ Makes psychologists' jobs easier
 Psychologists keeping their notes digitally instead of in notebooks both helps the environment by preventing paper waste and lightens their workload.
 
 ## 📸 Project Interface
-![interface]()
+Login page;  
+![interface](./assets/login.JPG)
+Main page;    
+![interface](./assets/main.JPG)  
+Detail page;  
+![interface](./assets/detail.JPG)  
 
 ## Technologies Used 
 **```Python```** 

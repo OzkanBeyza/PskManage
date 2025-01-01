@@ -11,30 +11,62 @@ class MainApp(QtWidgets.QMainWindow):
 class LoginRegisterApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Kullanıcı Kayıt ve Giriş")
-        self.setGeometry(200, 200, 1960, 400)
+        self.setWindowTitle("User Register and Login")
+        self.setGeometry(200, 200, 500, 300)
         self.initDatabase()
         self.main_window = None
-        
         self.layout = QVBoxLayout()
         
         # Kullanıcı adı ve şifre alanları
         self.username_input = QLineEdit(self)
-        self.username_input.setPlaceholderText("Kullanıcı Adı")
+        self.username_input.setPlaceholderText("User Name ")
         self.layout.addWidget(self.username_input)
         
         self.password_input = QLineEdit(self)
-        self.password_input.setPlaceholderText("Şifre")
+        self.password_input.setPlaceholderText("Password ")
         self.password_input.setEchoMode(QLineEdit.Password)
         self.layout.addWidget(self.password_input)
         
-        # Kayıt ve giriş butonları
-        self.register_button = QPushButton("Kayıt Ol", self)
+        # Kayıt butonu
+        self.register_button = QPushButton("Register", self)
         self.register_button.clicked.connect(self.register_user)
+        self.register_button.setStyleSheet("""
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                font-size: 16px;
+                border: 2px solid #4CAF50;
+                border-radius: 20px; /* Radius artırıldı */
+                padding: 10px;
+            }
+            QPushButton:hover {
+                background-color: #45a049;
+            }
+            QPushButton:pressed {
+                background-color: #3e8e41;
+            }
+        """)
         self.layout.addWidget(self.register_button)
         
-        self.login_button = QPushButton("Giriş Yap", self)
+        # Giriş butonu
+        self.login_button = QPushButton("Login", self)
         self.login_button.clicked.connect(self.login_user)
+        self.login_button.setStyleSheet("""
+            QPushButton {
+                background-color: #008CBA;
+                color: white;
+                font-size: 16px;
+                border: 2px solid #008CBA;
+                border-radius: 20px; /* Radius artırıldı */
+                padding: 10px;
+            }
+            QPushButton:hover {
+                background-color: #007bb5;
+            }
+            QPushButton:pressed {
+                background-color: #006b99;
+            }
+        """)
         self.layout.addWidget(self.login_button)
         
         # Sonuçları göstermek için bir etiket
@@ -42,6 +74,8 @@ class LoginRegisterApp(QWidget):
         self.layout.addWidget(self.result_label)
         
         self.setLayout(self.layout)
+
+    
     
     def register_user(self):
         username = self.username_input.text()
@@ -327,13 +361,13 @@ class Ui_MainWindow(object):
         # Notes Title Label
         self.label_notes_title = QtWidgets.QLabel(self.tab_2)
         self.label_notes_title.setGeometry(QtCore.QRect(200, 200, 351, 51))
-        self.label_notes_title.setFont(QtGui.QFont("", 22))
+        self.label_notes_title.setFont(QtGui.QFont("", 20))
         self.label_notes_title.setText("Patient")  # Başlık olarak "Patients" ekledik
         self.label_notes_title.setObjectName("label_notes_title")
 
         self.label_notes_title = QtWidgets.QLabel(self.tab_2)
         self.label_notes_title.setGeometry(QtCore.QRect(1080, 100, 351, 51))
-        self.label_notes_title.setFont(QtGui.QFont("", 16))
+        self.label_notes_title.setFont(QtGui.QFont("", 20))
         self.label_notes_title.setObjectName("label_notes_title")
 
         self.widget_form = QtWidgets.QWidget(self.tab_2)
